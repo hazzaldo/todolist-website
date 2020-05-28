@@ -1,0 +1,19 @@
+<%- include("partials/header") -%>
+
+    <div class="box" id="heading">
+      <h1>ALL LISTS</h1>
+    </div>
+
+    <div class="box">
+        <p>WARNING: By selecting the checkbox next to each list, will DELETE the list instantly.</p>
+        <% lists.forEach(list => { %>
+          <form action="/deleteList" method="post">
+            <div class="item">
+              <input type="checkbox" name="deleteListID" value="<%= list._id %>" onChange="this.form.submit()"></input>
+              <p><a href="/<%= list.name %>"><%= list.name %></a></p>
+            </div>
+          </form>
+        <% }); %>
+    </div>
+
+<%- include("partials/footer") -%>

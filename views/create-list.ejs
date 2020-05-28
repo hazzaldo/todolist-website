@@ -1,0 +1,14 @@
+<%- include("partials/header") -%>
+
+<div class="box" id="heading">
+  <h1>Create a new list</h1>
+</div>
+
+<div class="box">
+  <form class="item" action="/addList" method="post">
+    <input type="text" name="listName" placeholder="Enter name of new list" autocomplete="off">
+    <button type="submit" name="addListButton">+</button>
+  </form>
+</div>
+
+<%- include("partials/footer") -%>
